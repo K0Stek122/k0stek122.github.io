@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button } from '../components/ui/button';
 import { LaptopMinimalCheck, GraduationCap, BookOpenText } from 'lucide-react';
-import { Separator } from '../components/ui/separator';
 import { useNavigate } from 'react-router-dom';
 
 /*

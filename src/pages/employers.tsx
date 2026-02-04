@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import H1 from '../components/ui/typographyh1';
 import { Button } from '../components/ui/button';
 import { Separator } from '../components/ui/separator';
@@ -17,7 +16,6 @@ interface EmployersPageProps {
 }
 
 const EmployersPage: React.FC<EmployersPageProps> = () => {
-    const navigate = useNavigate();
     const buttonStyles = "transition-transform duration-200 hover:scale-110 hover:cursor-pointer animate-fadeInUp";
     
     const handleExternalLink = (url: string) => {
