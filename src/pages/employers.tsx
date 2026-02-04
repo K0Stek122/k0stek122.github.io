@@ -124,7 +124,6 @@ const EmployersPage: React.FC<EmployersPageProps> = () => {
                 <p className="leading-7 [&:not(:first-child)]:mt-2 text-white">
                     I work with small and medium-sized businesses, startups, and teams that need an extra pair of hands for short-term projects or ongoing improvements.
                     Whether you're fixing an existing system or building something new, I focus on practical solutions that save time and make day-to-day work easier.
-                    in a Business-Oriented and Pragmatic manner.
                 </p>
 
                 <p className="leading-7 [&:not(:first-child)]:mt-2 text-white font-extrabold">
