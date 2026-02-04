@@ -4,7 +4,7 @@ import { Button } from '../components/ui/button';
 import { Separator } from '../components/ui/separator';
 import { FileUser, Globe, Code, Phone } from 'lucide-react';
 import LinImage from '../assets/LinkedIn.jpg'
-import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogTitle, AlertDialogDescription, AlertDialogHeader, AlertDialogFooter, AlertDialogAction, AlertDialogMedia, AlertDialogCancel} from '../components/ui/alert-dialog';
+import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogTitle, AlertDialogDescription, AlertDialogHeader, AlertDialogFooter, AlertDialogMedia, AlertDialogCancel} from '../components/ui/alert-dialog';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from '../components/ui/breadcrumb';
 
 /*
