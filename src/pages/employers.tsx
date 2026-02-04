@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import H1 from '../components/ui/typographyh1';
 import { Button } from '../components/ui/button';
+import { FileUser } from 'lucide-react';
 
 /*
 The main page will display three main buttons:
@@ -16,6 +17,13 @@ interface EmployersPageProps {
 
 const EmployersPage: React.FC<EmployersPageProps> = () => {
     const navigate = useNavigate();
+    const buttonStyles = "transition-transform duration-200 hover:scale-110 hover:cursor-pointer animate-fadeInUp";
+    
+    const handleExternalLink = (url: string) => {
+        window.open(url, '_blank');
+    };
+
+
     return (
         <div className="flex items-start justify-center h-screen bg-slate-800 gap-4">
             <div className="animate-fadeInUp flex flex-row items-center justify-center gap-4 bg-slate-800 v-screen">
@@ -26,10 +34,21 @@ const EmployersPage: React.FC<EmployersPageProps> = () => {
                 />
                 <div className="flex flex-col items-center justify-center gap-4 bg-slate-800">
                     <H1 text="My Name is Kamil Kostrzewa"></H1>
-                    <Button variant="default">Test</Button>
+                    <div className="flex flex-row items-center justify-center gap-4 bg-slate-800">
+                        <Button
+                            variant="default"
+                            className={buttonStyles}
+                            onClick={() => handleExternalLink("https://www.linkedin.com/in/kamil-kostek/")}>
+                                <FileUser data-icon="inline-start" />
+                                LinkedIn
+                        </Button>
+
+                        <Button variant="default">CV</Button>
+
+                        <Button variant="default">GitHub</Button>
+                    </div>
                 </div>
             </div>
-
         </div>
     );
 };
