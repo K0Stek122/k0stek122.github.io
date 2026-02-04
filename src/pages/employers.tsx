@@ -43,7 +43,7 @@ const EmployersPage: React.FC<EmployersPageProps> = () => {
                 <img
                     src={LinImage}
                     alt="Description of the image"
-                    className="rounded shadow-lg h-56 rounded-full"
+                    className="rounded shadow-lg h-56 rounded-full h-32 sm:h-40 md:h-56"
                 />
                 <div className="flex flex-col items-center justify-center gap-4">
                     <H1 text="Kamil Kostrzewa"></H1>
