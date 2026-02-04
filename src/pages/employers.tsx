@@ -25,7 +25,6 @@ const EmployersPage: React.FC<EmployersPageProps> = () => {
         window.open(url, '_blank');
     };
 
-
     return (
         <div className="flex flex-col items-center min-h-screen w-dvw bg-slate-800 gap-6 justify-center mx-auto">
             <Breadcrumb className="animate-fadeInUp hover:text-white">
