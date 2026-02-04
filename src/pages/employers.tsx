@@ -131,7 +131,7 @@ const EmployersPage: React.FC<EmployersPageProps> = () => {
                 </p>
 
                 <ul className="ml-6 list-disc mt-2 text-white">
-                    <li className="mb-2">Data & reporting tools — spreadshets, dashboards, automation to cut down manual work.</li>
+                    <li className="mb-2">Data & reporting tools — spreadsheets, dashboards, automation to cut down manual work.</li>
                     <li className="mb-2">Application improvements — refactoring, documentation, performance tuning, and CI/CD setup.</li>
                     <li className="mb-2">Internal tools — Small custom apps for bookkeeping, operations, or team workflows.</li>
                     <li className="mb-6">Website & web apps — clean, maintainable sites built to last.</li>
