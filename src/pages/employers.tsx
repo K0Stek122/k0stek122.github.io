@@ -3,6 +3,7 @@ import H1 from '../components/ui/typographyh1';
 import { Button } from '../components/ui/button';
 import { Separator } from '../components/ui/separator';
 import { FileUser, Globe, Code } from 'lucide-react';
+import LinImage from '../assets/LinkedIn.jpg'
 
 /*
 The main page will display three main buttons:
@@ -27,7 +28,7 @@ const EmployersPage: React.FC<EmployersPageProps> = () => {
         <div className="flex flex-col items-center h-screen w-dvw bg-slate-800 gap-12 justify-start">
             <div className="animate-fadeInUp flex flex-row items-center justify-center gap-4 bg-slate-800 v-screen w-full max-w-4xl">
                 <img
-                    src="/src/assets/LinkedIn.jpg"
+                    src={LinImage}
                     alt="Description of the image"
                     className="rounded shadow-lg h-56 rounded-full"
                 />
