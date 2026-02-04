@@ -65,6 +65,7 @@ const EmployersPage: React.FC<EmployersPageProps> = () => {
                             variant="default"
                             size="lg"
                             className={buttonStyles}
+                            onClick={() => handleExternalLink("https://docs.google.com/document/d/1q6EBuYkSe4tXu3gUG89antRiKxH-XCKnsW3TovMqB9w/edit?usp=drive_link")}
                             >
                                 <FileUser data-icon="inline-start" />
                                 CV
@@ -111,27 +112,38 @@ const EmployersPage: React.FC<EmployersPageProps> = () => {
             
                 <H1 text="About Me" />
                 <p className="leading-7 [&:not(:first-child)]:mb-6 mt-2 text-white">
-                    Hi! I am an aspiring Software Engineer with a deep-rooted passion for computer science. Since childhood I adored programming and loved creating my own tools. Head over to GitHub to see some of my best projects.
+                    I'm a software engineer who builds and improves real-world systems for businesses — from internal tools and data workflows to reliable websites.
+                    I focus on clear communication and clean code, so your systems are faster, easier to maintain, and easier to scale. You can view selected projects on GitHub.
+                </p>
+                <p className="leading-7 [&:not(:first-child)]:mb-6 mt-2 text-white">
+                    Most of my work is about creating solid foundations that last.
+                    I'm particularly helpful when dealing with messy data, repetitive admin work, or systems that need stabilising and simplifying.
                 </p>
 
-                <H1 text="Freelance & Short-Term Work" />
+                <H1 text="Freelance & Contract Work" />
                 <p className="leading-7 [&:not(:first-child)]:mt-2 text-white">
-                    <b className="underline">Open to freelance.</b> Not Individual but Business-oriented. Below you will find some of the issues I can help fix at your business.
+                    I work with small and medium-sized businesses, startups, and teams that need an extra pair of hands for short-term projects or ongoing improvements.
+                    Whether you're fixing an existing system or building something new, I focus on practical solutions that save time and make day-to-day work easier.
+                    in a Business-Oriented and Pragmatic manner.
+                </p>
+
+                <p className="leading-7 [&:not(:first-child)]:mt-2 text-white font-extrabold">
+                    How I Can Help:
                 </p>
 
                 <ul className="ml-6 list-disc mt-2 text-white">
-                    <li className="mb-2">Data Entry, Analytics & Visualisation.</li>
-                    <li className="mb-2">Application maintenance. Refactoring, Documentation, CI/CD optimisation.</li>
-                    <li className="mb-2">Small-scale Applications (e.g. Internal tools for bookkeeping or data entry)</li>
-                    <li className="mb-2">Small and Medium-Scale Website Development.</li>
+                    <li className="mb-2">Data & reporting tools — preadshets, dashboards, automation to cut down manual work.</li>
+                    <li className="mb-2">Application improvements — refactoring, documentation, performance tuning, and CI/CD setup.</li>
+                    <li className="mb-2">Internal tools — Small custom apps for bookkeeping, operations, or team workflows.</li>
+                    <li className="mb-6">Website & web apps — clean, maintainable sites built to last.</li>
                 </ul>
 
                 <p className="leading-7 [&:not(:first-child)]:mb-6 text-white">
-                    <b className="underline">Offering Free Consultations. Charging Per Result.</b> If your issue is not listed here I am open to taking a look at your situation for free to see what we can work out.
+                    I offer free consultations and clear, fixed pricing. If you're not sure whether your problem fits, feel free to reach out — I'm always happy to chat and see how I can help.
                 </p>
 
                 <p className="leading-7 [&:not(:first-child)]:mb-6 text-white">
-                    <b className="underline">Affordable & Reasonable Student Prices.</b>
+                    <b>Available for freelance projects and open to full-time opportunities.</b>
                 </p>
             </div>
         </div>
