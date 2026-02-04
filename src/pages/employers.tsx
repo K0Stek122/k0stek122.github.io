@@ -26,7 +26,7 @@ const EmployersPage: React.FC<EmployersPageProps> = () => {
     };
 
     return (
-        <div className="flex flex-col items-center min-h-screen w-dvw bg-slate-800 gap-6 justify-center mx-auto">
+        <div className="flex flex-col items-center min-h-screen w-full bg-slate-800 gap-6 justify-center mx-auto px-4">
             <Breadcrumb className="animate-fadeInUp hover:text-white">
                 <BreadcrumbList> 
                     <BreadcrumbItem>
@@ -39,11 +39,11 @@ const EmployersPage: React.FC<EmployersPageProps> = () => {
                 </BreadcrumbList>
             </Breadcrumb>
 
-            <div className="animate-fadeInUp flex flex-row items-center justify-center gap-4 v-screen w-full max-w-4xl">
+            <div className="animate-fadeInUp flex flex-col md:flex-row items-center justify-center gap-4 v-screen w-full max-w-4xl">
                 <img
                     src={LinImage}
                     alt="Description of the image"
-                    className="rounded shadow-lg h-56 rounded-full h-32 sm:h-40 md:h-56"
+                    className="rounded shadow-lg rounded-full h-24 md:h-56"
                 />
                 <div className="flex flex-col items-center justify-center gap-4">
                     <H1 text="Kamil Kostrzewa"></H1>
