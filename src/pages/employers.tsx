@@ -6,6 +6,7 @@ import { FileUser, Globe, Code, Phone } from 'lucide-react';
 import LinImage from '../assets/LinkedIn.jpg'
 import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogTitle, AlertDialogDescription, AlertDialogHeader, AlertDialogFooter, AlertDialogMedia, AlertDialogCancel} from '../components/ui/alert-dialog';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from '../components/ui/breadcrumb';
+import P from '../components/ui/typographyp';
 
 /*
 The main page will display three main buttons:
@@ -46,10 +47,10 @@ const EmployersPage: React.FC<EmployersPageProps> = () => {
                     className="rounded shadow-lg rounded-full h-24 md:h-56"
                 />
                 <div className="flex flex-col items-center justify-center gap-4">
-                    <H1 text="Kamil Kostrzewa"></H1>
-                    <p className=" [&:not(:first-child)]: text-white">
+                    <H1>Kamil Kostrzewa</H1>
+                    <P>
                         "Do More with Less. Be Pragmatic."
-                    </p>
+                    </P>
                     <div className="flex flex-row items-center justify-center gap-4">
 
                         <Button
@@ -110,26 +111,26 @@ const EmployersPage: React.FC<EmployersPageProps> = () => {
             <Separator className="animate-fadeInUp max-w-5/6 md:max-w-4/6" />
             <div className="animate-fadeInUp flex flex-col items-center w-screen max-w-5/6 md:max-w-4/6">
                 <H1>About Me</H1>
-                <p className="leading-7 [&:not(:first-child)]:mb-6 mt-2 text-white">
+                <P>
                     I'm a software engineer who builds and improves real-world systems for businesses — from internal tools and data workflows to reliable websites.
                     I focus on clear communication and clean code, so your systems are faster, easier to maintain, and easier to scale. You can view selected projects on GitHub.
-                </p>
-                <p className="leading-7 [&:not(:first-child)]:mb-6 mt-2 text-white">
+                </P>
+                <P>
                     Most of my work is about creating solid foundations that last.
                     I'm particularly helpful when dealing with messy data, repetitive admin work, or systems that need stabilising and simplifying.
-                </p>
+                </P>
 
                 <H1>Full-Time & Part-Time Work</H1>
 
                 <H1>Freelance & Contract Work</H1>
-                <p className="leading-7 [&:not(:first-child)]:mt-2 text-white">
+                <P>
                     I work with small and medium-sized businesses, startups, and teams that need an extra pair of hands for short-term projects or ongoing improvements.
                     Whether you're fixing an existing system or building something new, I focus on practical solutions that save time and make day-to-day work easier.
-                </p>
+                </P>
 
-                <p className="leading-7 [&:not(:first-child)]:mt-2 text-white font-extrabold">
+                <P>
                     How I Can Help:
-                </p>
+                </P>
 
                 <ul className="ml-6 list-disc mt-2 text-white">
                     <li className="mb-2">Data & reporting tools — spreadsheets, dashboards, automation to cut down manual work.</li>
@@ -138,13 +139,11 @@ const EmployersPage: React.FC<EmployersPageProps> = () => {
                     <li className="mb-6">Website & web apps — clean, maintainable sites built to last.</li>
                 </ul>
 
-                <p className="leading-7 [&:not(:first-child)]:mb-6 text-white">
+                <P>
                     I offer free consultations and clear, fixed pricing. If you're not sure whether your problem fits, feel free to reach out — I'm always happy to chat and see how I can help.
-                </p>
+                </P>
 
-                <p className="leading-7 [&:not(:first-child)]:mb-6 text-white">
-                    <b>Available for freelance projects and open to full-time opportunities.</b>
-                </p>
+                <P><b>Available for freelance projects and open to full-time opportunities.</b></P>
             </div>
         </div>
     );
