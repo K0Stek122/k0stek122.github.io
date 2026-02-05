@@ -108,8 +108,8 @@ const EmployersPage: React.FC<EmployersPageProps> = () => {
                     </AlertDialog>
                 </div>
             </div>
-            <Separator className="animate-fadeInUp max-w-5/6 md:max-w-4/6" />
-            <div className="animate-fadeInUp flex flex-col items-center w-screen max-w-5/6 md:max-w-4/6">
+            <Separator className="animate-fadeInUp max-w-5/6 md:max-w-1/2" />
+            <div className="animate-fadeInUp flex flex-col items-center w-screen max-w-5/6 md:max-w-1/2">
                 <H1>About Me</H1>
                 <P>
                     I'm a software engineer who builds and improves real-world systems for businesses — from internal tools and data workflows to reliable websites.
