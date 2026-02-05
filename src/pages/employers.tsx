@@ -121,7 +121,15 @@ const EmployersPage: React.FC<EmployersPageProps> = () => {
                 </P>
 
                 <H1>Full-Time & Part-Time Work</H1>
-
+                <P className="mr-4">
+                    I am seeking work in Software/Hardware Engineering & IT Support Engineering.
+                </P>
+                <P>
+                    I enjoy working in fast-paced environments where problem-solving and critical thinking are key.
+                    I deliver cost and time savings by thinking outside the box and coming up with solutions.
+                    Please take a look at my CV and contact me if you're an employer looking for a disciplined and an eager to learn individual.
+                </P>
+                
                 <H1>Freelance & Contract Work</H1>
                 <P>
                     I work with small and medium-sized businesses, startups, and teams that need an extra pair of hands for short-term projects or ongoing improvements.
