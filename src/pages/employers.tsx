@@ -109,7 +109,7 @@ const EmployersPage: React.FC<EmployersPageProps> = () => {
             </div>
             <Separator className="animate-fadeInUp max-w-5/6 md:max-w-4/6" />
             <div className="animate-fadeInUp flex flex-col items-center w-screen max-w-5/6 md:max-w-4/6">
-                <H1 text="About Me" />
+                <H1>About Me</H1>
                 <p className="leading-7 [&:not(:first-child)]:mb-6 mt-2 text-white">
                     I'm a software engineer who builds and improves real-world systems for businesses — from internal tools and data workflows to reliable websites.
                     I focus on clear communication and clean code, so your systems are faster, easier to maintain, and easier to scale. You can view selected projects on GitHub.
@@ -119,7 +119,9 @@ const EmployersPage: React.FC<EmployersPageProps> = () => {
                     I'm particularly helpful when dealing with messy data, repetitive admin work, or systems that need stabilising and simplifying.
                 </p>
 
-                <H1 text="Freelance & Contract Work" />
+                <H1>Full-Time & Part-Time Work</H1>
+
+                <H1>Freelance & Contract Work</H1>
                 <p className="leading-7 [&:not(:first-child)]:mt-2 text-white">
                     I work with small and medium-sized businesses, startups, and teams that need an extra pair of hands for short-term projects or ongoing improvements.
                     Whether you're fixing an existing system or building something new, I focus on practical solutions that save time and make day-to-day work easier.
