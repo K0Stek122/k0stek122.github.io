@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button } from '../components/ui/button';
 import { LaptopMinimalCheck, GraduationCap, BookOpenText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { AlertDialog, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '../components/ui/alert-dialog';
+import LargeButton from '../components/ui/large-button';
 
 /*
 The main page will display three main buttons:
@@ -17,7 +17,6 @@ interface IndexPageProps {
 
 const IndexPage: React.FC<IndexPageProps> = () => {
     const navigate = useNavigate();
-    const buttonStyles = "h-24 w-30 transition-transform duration-200 hover:scale-110 flex flex-col items-center justify-center gap-2 hover:cursor-pointer animate-fadeInUp";
 
     const handleExternalLink = (url: string) => {
         window.open(url, '_blank');
@@ -25,20 +24,18 @@ const IndexPage: React.FC<IndexPageProps> = () => {
 
     return (
         <div className="flex items-center justify-center h-screen bg-slate-800 gap-4">
-            <Button variant="default" className={buttonStyles}
-                onClick={()=> navigate('/employers')}
-            >
+            <LargeButton onClick={()=> navigate('/employers')}>
                 <LaptopMinimalCheck className="size-14" data-icon="inline-start" aria-hidden="true" />
                 For Employers
-            </Button>
+            </LargeButton>
 
             
             <AlertDialog>
                 <AlertDialogTrigger>
-                    <Button variant="default" className={buttonStyles}>
+                    <LargeButton>
                         <GraduationCap className="size-14" data-icon="inline-start" aria-hidden="true" />
                         For Students
-                    </Button>
+                    </LargeButton>
                 </AlertDialogTrigger>
                 <AlertDialogContent className="bg-slate-800 text-white border-none">
                     <AlertDialogHeader>
@@ -53,12 +50,10 @@ const IndexPage: React.FC<IndexPageProps> = () => {
                 </AlertDialogContent>
             </AlertDialog>
 
-            <Button variant="default" className={buttonStyles}
-                onClick={() => handleExternalLink("https://themindpalace.bearblog.dev/")}
-            >
+            <LargeButton onClick={() => handleExternalLink("https://themindpalace.bearblog.dev/")}>
                 <BookOpenText className="size-14" data-icon="inline-start" aria-hidden="true" />
                 Blog
-            </Button>
+            </LargeButton>
 
         </div>
     );

@@ -7,6 +7,7 @@ import LinImage from '../assets/LinkedIn.jpg'
 import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogTitle, AlertDialogDescription, AlertDialogHeader, AlertDialogFooter, AlertDialogMedia, AlertDialogCancel} from '../components/ui/alert-dialog';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from '../components/ui/breadcrumb';
 import P from '../components/ui/typographyp';
+import { useNavigate } from 'react-router-dom';
 
 /*
 The main page will display three main buttons:
@@ -20,6 +21,7 @@ interface EmployersPageProps {
 }
 
 const EmployersPage: React.FC<EmployersPageProps> = () => {
+    const navigate = useNavigate();
     const buttonStyles = "bg-slate-700 transition-transform duration-200 hover:scale-110 hover:cursor-pointer animate-fadeInUp";
     
     const handleExternalLink = (url: string) => {
@@ -76,10 +78,10 @@ const EmployersPage: React.FC<EmployersPageProps> = () => {
                             variant="default"
                             size="lg"
                             className={buttonStyles}
-                            onClick={() => handleExternalLink("https://github.com/K0Stek122")}
+                            onClick={() => navigate('/employers/portfolio')}
                             >
                                 <Code data-icon="inline-start" />
-                                GitHub
+                                Portfolio
                         </Button>
                     </div>
 
