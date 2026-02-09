@@ -50,6 +50,13 @@ export default function PortfolioPage() {
                 image: null,
                 link: "https://github.com/K0Stek122/CastHud"
         },
+        {
+            title: "DLL Injector in RustLang",
+            description:
+                "A DLL injector that uses Windows libraries to inject DLLs into foreign applications.",
+            image: null,
+            link: "https://github.com/K0Stek122/Rust-DLL-Injector" // TODO: ADD README TO THAT PROJECT
+        },
     ];
     
     const toggleProject = (increment: boolean) => {
