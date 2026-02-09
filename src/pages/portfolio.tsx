@@ -64,8 +64,6 @@ export default function PortfolioPage() {
     
     const project = projects[currentProject];
 
-    const buttonStyle = "transition-transform duration-200 hover:scale-110 mb-4 mt-0 hover:cursor-pointer";
-
     return (
         <div className="flex min-h-screen h-screen max-h-sreen justify-start items-center flex-col gap-6 px-4 bg-slate-800 animate-fadeInUp">
             <Breadcrumb className="animate-fadeInUp hover:text-white">
