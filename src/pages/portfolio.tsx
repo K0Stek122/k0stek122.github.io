@@ -3,6 +3,7 @@ import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbS
 import xdumpImage from ".././assets/projects/xdump.png"
 import conwayImage from ".././assets/projects/c-conway-game-of-life.gif"
 import kindleImage from ".././assets/projects/kindle-extractor.png"
+import cbImage from ".././assets/projects/cb.png"
 
 import LargeButton from "../components/ui/large-button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -15,25 +16,39 @@ export default function PortfolioPage() {
     
     const projects = [
         {
+            title: "Change Birmingham Page and Database Backend",
+            description:
+                "Engineered the full stack website + database for the charity 'Change Birmingham' specialising in Solution-Focused Therapy and Counselling.",
+                image: cbImage,
+                link: "https://changebrieftherapy.org/"
+        },
+        {
             title: "Kindle Quote Extractor",
             description:
-                "A Python-based tool designed for readers to extract highlights, notes, and quotes from digital books. The tool processes book data and consolidates marked passages into a clean, structured output. It enables readers to review, archive, and reuse their annotations outside the reading environment. The project focuses on data extraction, text processing, and reliable handling of varied input formats. Built to simplify personal knowledge management and long-term note retention. Designed with automation in mind to reduce manual copying and fragmented note-taking.",
+                "A Python-based tool designed for readers to extract highlights, notes, and quotes from digital books. The tool processes book data and consolidates marked passages into a clean, structured output.",
             image: kindleImage,
             link: "https://github.com/K0Stek122/kindle-extractor"
         },
         {
             title: "xdump",
             description:
-                "The tool reads raw binary data and presents it in a structured hexadecimal format, enabling precise examination of file contents, memory layouts, and binary structures.Implemented entirely in pure C and built from scratch, the project focuses on performance, predictable memory usage, and explicit control over data representation. Particular attention was paid to efficient file I/O, safe buffer handling, and producing clear, readable output suitable for debugging and reverse-engineering workflows.",
+                "The tool reads raw binary data and presents it in a structured hexadecimal format, enabling precise examination of file contents, memory layouts, and binary structures. Implemented entirely in pure C and built from scratch.",
             image: xdumpImage,
             link: "https://github.com/K0Stek122/xdump"
         },
         {
             title: "Conway's Game of Life",
             description:
-                "The project simulates the evolution of a two-dimensional cellular automaton, updating and rendering the grid in real time within the terminal environment. It handles state transitions, boundary conditions, and efficient grid updates across successive generations.The terminal interface was implemented using low-level terminal utilities, allowing interactive control and visual feedback without relying on graphical frameworks. The focus of the project was on clear separation of simulation logic and rendering, efficient memory usage, and predictable behaviour.",
+                "The project simulates the evolution of a two-dimensional cellular automaton. It handles state transitions, boundary conditions, and efficient grid updates across successive generations.",
             image: conwayImage,
             link: "https://github.com/K0Stek122/c-conway-game-of-life"
+        },
+        {
+            title: "CastHud: C++ GUI overlay tool",
+            description:
+                "designed to let the user designed whatever they need on top of another application. Targeted towards gaming but can be used in any application as long as the system is running windows.",
+                image: null,
+                link: "https://github.com/K0Stek122/CastHud"
         },
     ];
     
