@@ -87,7 +87,7 @@ export default function PortfolioPage() {
     const project = projects[currentProject];
 
     return (
-        <div className="flex flex-col justify-center items-center overflow-hidden min-h-screen m-4">
+        <div className="flex flex-col justify-center items-center overflow-hidden min-h-screen m-2">
             <Breadcrumb className="animate-fadeInUp hover:text-white pb-4">
                 <BreadcrumbList> 
                     <BreadcrumbItem>
