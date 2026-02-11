@@ -9,13 +9,17 @@ interface ProjectCardProps {
     projectDescription: string;
     image: string;
     link: string;
+    totalIndex: number;
+    curIndex: number;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
     projectTitle,
     projectDescription,
     image,
-    link
+    link,
+    totalIndex,
+    curIndex
 }) => {
 
     const handleExternalLink = (url: string) => {
@@ -26,17 +30,22 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
     return (
         <div
-            className="flex bg-slate-800 flex-col justify-center items-center max-w-5/6 md:max-w-1/2 p-2 animate-fadeInUp m-4"
+            className="flex bg-slate-800 flex-col justify-center items-center p-2 animate-fadeInUp h-full overflow-hidden"
         >
-            <H1>{projectTitle}</H1>
-            <P>{projectDescription}</P>
+            <H1 className="line-clamp-1">{projectTitle}</H1>
+            <P className="line-clamp-2">{projectDescription}</P>
             <Button className={buttonStyle} size="lg" onClick={() => handleExternalLink(link)}>
                 <CodeIcon data-icon="inline-start" aria-hidden={false} />
-                GitHub
+                See it yourself
             </Button>
-            <div className="w-full max-w-90/100 aspect-[16/9] overflow-hidden rounded-lg shadow-lg">
+            <div className="w-90/100 max-w-90/100 aspect-[16/9] h-auto overflow-hidden rounded-lg shadow-lg max-h-90/100">
                 <img src={image} className="rounded-lg h-full w-full object-cover"></img>
             </div>
+            <P>
+                {"◦".repeat(curIndex)}
+                {"•"}
+                {"◦".repeat(totalIndex - curIndex - 1)}
+            </P>
         </div>
     );
 };
