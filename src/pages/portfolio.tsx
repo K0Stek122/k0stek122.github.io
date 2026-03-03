@@ -12,82 +12,82 @@ import { ProjectCard } from "../components/ui/project-card";
 
 export default function PortfolioPage() {
     
-    const [currentProject, setCurrentProject] = useState(0);
+    const [currentProjectPointer, setCurrentProjectPointer] = useState(0);
     
     //TODO Images
     const projects = [
         {
             title: "Unify Giving VisuAIse AI image generation.",
             description:
-                "Engineered and designed the full stack website + Python Flask backend for 'Unify Giving' specialising in assisting the homeless and helping people find housing.",
-            image: xdumpImage,
+                "Engineered full-stack AI-Driven software for 'Unify Giving' to help people in need access housing resources.",
+            image: cbImage,
             link: "https://unifygiving.com/",
         },
         {
             title: "Change Birmingham Page + Database Backend",
             description:
-                "Engineered the full stack website + database for the charity 'Change Birmingham' specialising in Solution-Focused Therapy and Counselling.",
+                "Engineered full-stack website & database for the charity 'Change Birmingham' aiding staff with data storage & analytics.",
             image: cbImage,
             link: "https://changebrieftherapy.org/"
         },
         {
             title: "Kindle Quote Extractor",
             description:
-                "A Python-based tool designed for readers to extract highlights, notes, and quotes from digital books. WHAT THE FUCK IS HAPPENING HERE???????????????",
+                "Engineered a Python tool for automating quote extraction. Allows for output to JSON and Markdown.",
             image: kindleImage,
             link: "https://github.com/K0Stek122/kindle-extractor"
         },
         {
-            title: "xdump",
+            title: "xdump: Hexdump utility tool",
             description:
-                "The tool reads raw binary data and presents it in a structured hexadecimal format, enabling precise examination of file contents.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            image: xdumpImage,
+                "Engineered a Pure-C tool for analysing raw binary data of any file.",
+            image: cbImage,
             link: "https://github.com/K0Stek122/xdump"
         },
         {
             title: "Conway's Game of Life",
             description:
-                "The project simulates the evolution of a two-dimensional cellular automaton. It handles state transitions, boundary conditions, and efficient grid updates across successive generations.",
+                "Designed Conway's game of life in Pure-C. Utilises mathematics and computation theory to implement a Pushdown Automaton.",
             image: conwayImage,
             link: "https://github.com/K0Stek122/c-conway-game-of-life"
         },
         {
             title: "CastHud: C++ GUI overlay tool",
             description:
-                "designed to let the user designed whatever they need on top of another application. Targeted towards gaming but can be used in any application as long as the system is running windows.",
-            image: xdumpImage,
+                "Designed a GUI overlay tool letting users design any user interface on top of another application.",
+            image: cbImage,
             link: "https://github.com/K0Stek122/CastHud"
         },
         {
-            title: "DLL Injector in RustLang",
+            title: "Library injection utility in Rust",
             description:
-                "A DLL injector that uses Windows libraries to inject DLLs into foreign applications.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            image: xdumpImage,
+                "Devised a cutting-edge tool for library injection into other applications.",
+            image: cbImage,
             link: "https://github.com/K0Stek122/Rust-DLL-Injector" // TODO: ADD README TO THAT PROJECT
         },
         {
             title: "File Splitter and Unsplitter.",
             description:
-                "Written in pure C. Intuitive software that allows the user to split files for sharing or easier transfer.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            image: xdumpImage,
+                "Engineered in pure C. Intuitive software that allows the user to split files for sharing or easier transfer.",
+            image: cbImage,
             link: "https://github.com/K0Stek122/c-file-splitter"
         },
     ];
     
     const toggleProject = (increment: boolean) => {
         if (!increment) {
-            if (currentProject === 0) return;
-            setCurrentProject(currentProject - 1);
+            if (currentProjectPointer === 0) return;
+            setCurrentProjectPointer(currentProjectPointer - 1);
         } else {
-            if (currentProject === projects.length - 1) return;
-            setCurrentProject(currentProject + 1);
+            if (currentProjectPointer === projects.length - 1) return;
+            setCurrentProjectPointer(currentProjectPointer + 1);
         }
     };
     
-    const project = projects[currentProject];
+    const project = projects[currentProjectPointer];
 
     return (
-        <div className="flex flex-col justify-center items-center overflow-hidden min-h-screen m-2">
+        <div className="flex flex-col justify-center items-center min-h-screen m-2">
             <Breadcrumb className="animate-fadeInUp hover:text-white pb-4">
                 <BreadcrumbList> 
                     <BreadcrumbItem>
@@ -104,24 +104,24 @@ export default function PortfolioPage() {
                 </BreadcrumbList>
             </Breadcrumb>
             
-            <div className="flex flex-row justify-center items-center overflow-hidden">
-                <div className="flex flex-row justify-center items-center max-w-15/100 h-full">
-                    <LargeButton className="mt-20" onClick={() => toggleProject(false)}>
+            <div className="flex flex-row justify-center items-center">
+                <div className="flex flex-row justify-center items-center max-w-15/100 h-auto">
+                    <LargeButton onClick={() => toggleProject(false)}>
                         <ChevronLeft className="size-26" data-icon="inline-start" aria-hidden={false} />
                     </LargeButton>
                 </div>
                 <ProjectCard
-                    key={currentProject}
+                    key={currentProjectPointer}
                     projectTitle={project.title}
                     projectDescription={project.description}
                     image={project.image}
                     link={project.link}
                     totalIndex={projects.length}
-                    curIndex={currentProject}
+                    curIndex={currentProjectPointer}
                 />
-                <div className="flex flex-row justify-center items-center max-w-15/100 h-full max-w-1/5">
-                    <LargeButton className="mt-20" onClick={() => toggleProject(true)}>
-                        <ChevronRight className="size-20" data-icon="inline-start" aria-hidden={false} />
+                <div className="flex flex-row justify-center items-center max-w-15/100">
+                    <LargeButton className="" onClick={() => toggleProject(true)}>
+                        <ChevronRight className="size-26" data-icon="inline-start" aria-hidden={false} />
                     </LargeButton>
                 </div>
             </div>

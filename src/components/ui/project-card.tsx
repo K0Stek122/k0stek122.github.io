@@ -5,6 +5,7 @@ import { Button } from './button';
 import P from './typographyp';
 
 interface ProjectCardProps {
+    className?: string;
     projectTitle: string;
     projectDescription: string;
     image: string;
@@ -14,6 +15,7 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
+    className,
     projectTitle,
     projectDescription,
     image,
@@ -26,19 +28,20 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         window.open(url, '_blank');
     };
 
-    const buttonStyle = "transition-transform duration-200 hover:scale-110 mb-4 mt-0 hover:cursor-pointer";
+    const buttonStyle = "transition-transform duration-200 hover:scale-110 mb-4 mt-0 hover:cursor-pointer animate-fadeInUp";
+    const divStyle = "w-90/100 flex bg-slate-800 flex-col justify-center items-center p-2 h-full"
 
     return (
         <div
-            className="flex bg-slate-800 flex-col justify-center items-center p-2 animate-fadeInUp h-full overflow-hidden"
+            className={`${divStyle} ${className}`}
         >
-            <H1 className="line-clamp-1">{projectTitle}</H1>
-            <P className="line-clamp-2">{projectDescription}</P>
+            <H1 className="line-clamp-1 animate-fadeInUp">{projectTitle}</H1>
+            <P className="line-clamp-1 animate-fadeInUp">{projectDescription}</P>
             <Button className={buttonStyle} size="lg" onClick={() => handleExternalLink(link)}>
                 <CodeIcon data-icon="inline-start" aria-hidden={false} />
                 See it yourself
             </Button>
-            <div className="w-90/100 max-w-90/100 aspect-[16/9] h-auto overflow-hidden rounded-lg shadow-lg max-h-90/100">
+            <div className="w-90/100 max-w-90/100 aspect-[16/9] h-auto rounded-lg shadow-lg max-h-90/100 animate-fadeInUp">
                 <img src={image} className="rounded-lg h-full w-full object-cover"></img>
             </div>
             <P>

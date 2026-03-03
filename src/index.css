@@ -125,3 +125,9 @@
     font-family: "Inter", "system-ui", "sans-serif";
   }
 }
+
+@layer utilities {
+  .no-scrollbar {
+    @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+  }
+}
