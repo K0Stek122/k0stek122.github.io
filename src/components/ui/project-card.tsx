@@ -36,7 +36,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             className={`${divStyle} ${className}`}
         >
             <H1 className="line-clamp-1 animate-fadeInUp w-full">{projectTitle}</H1>
-            <P className="line-clamp-1 animate-fadeInUp w-full">{projectDescription}</P>
+            <P className="line-clamp-1 animate-fadeInUp w-full text-center">{projectDescription}</P>
             <Button className={buttonStyle} size="lg" onClick={() => handleExternalLink(link)}>
                 <CodeIcon data-icon="inline-start" aria-hidden={false} />
                 See it yourself
