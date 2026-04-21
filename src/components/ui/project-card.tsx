@@ -29,19 +29,19 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     };
 
     const buttonStyle = "transition-transform duration-200 hover:scale-110 mb-4 mt-0 hover:cursor-pointer animate-fadeInUp";
-    const divStyle = "w-90/100 flex bg-slate-800 flex-col justify-center items-center p-2 h-full"
+    const divStyle = "flex-1 h-full min-w-0 flex bg-slate-800 flex-col items-center p-4 gap-2"
 
     return (
         <div
             className={`${divStyle} ${className}`}
         >
-            <H1 className="line-clamp-1 animate-fadeInUp">{projectTitle}</H1>
-            <P className="line-clamp-1 animate-fadeInUp">{projectDescription}</P>
+            <H1 className="line-clamp-1 animate-fadeInUp w-full">{projectTitle}</H1>
+            <P className="line-clamp-1 animate-fadeInUp w-full">{projectDescription}</P>
             <Button className={buttonStyle} size="lg" onClick={() => handleExternalLink(link)}>
                 <CodeIcon data-icon="inline-start" aria-hidden={false} />
                 See it yourself
             </Button>
-            <div className="w-90/100 max-w-90/100 aspect-[16/9] h-auto rounded-lg shadow-lg max-h-90/100 animate-fadeInUp">
+            <div className="w-full flex-1 min-h-0 rounded-lg shadow-lg animate-fadeInUp overflow-hidden">
                 <img src={image} className="rounded-lg h-full w-full object-cover"></img>
             </div>
             <P>

@@ -29,7 +29,7 @@ const EmployersPage: React.FC<EmployersPageProps> = () => {
     };
 
     return (
-        <div className="flex flex-col items-center min-h-screen w-full bg-slate-800 gap-6 justify-center m-2 px-4">
+        <div className="flex flex-col overflow-x-hidden items-center min-h-screen w-full bg-slate-800 gap-6 justify-center m-2 px-4">
             <Breadcrumb className="animate-fadeInUp hover:text-white">
                 <BreadcrumbList> 
                     <BreadcrumbItem>
@@ -124,7 +124,7 @@ const EmployersPage: React.FC<EmployersPageProps> = () => {
 
                 <H1>Full-Time & Part-Time Work</H1>
                 <P className="mr-4">
-                    I am seeking work in Software/Hardware Engineering & IT Support Engineering.
+                    I am seeking work in Software Engineering & IT Engineering.
                 </P>
                 <P>
                     I enjoy working in fast-paced environments where problem-solving and critical thinking are key.

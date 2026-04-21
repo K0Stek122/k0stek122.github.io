@@ -87,7 +87,7 @@ export default function PortfolioPage() {
     const project = projects[currentProjectPointer];
 
     return (
-        <div className="flex flex-col justify-center items-center min-h-screen m-2">
+        <div className="flex flex-col items-center h-screen p-2">
             <Breadcrumb className="animate-fadeInUp hover:text-white pb-4">
                 <BreadcrumbList> 
                     <BreadcrumbItem>
@@ -104,12 +104,10 @@ export default function PortfolioPage() {
                 </BreadcrumbList>
             </Breadcrumb>
             
-            <div className="flex flex-row justify-center items-center">
-                <div className="flex flex-row justify-center items-center max-w-15/100 h-auto">
-                    <LargeButton onClick={() => toggleProject(false)}>
-                        <ChevronLeft className="size-26" data-icon="inline-start" aria-hidden={false} />
-                    </LargeButton>
-                </div>
+            <div className="flex flex-row items-center gap-4 w-full flex-1 min-h-0">
+                <LargeButton onClick={() => toggleProject(false)}>
+                    <ChevronLeft className="size-26" data-icon="inline-start" aria-hidden={false} />
+                </LargeButton>
                 <ProjectCard
                     key={currentProjectPointer}
                     projectTitle={project.title}
@@ -119,11 +117,9 @@ export default function PortfolioPage() {
                     totalIndex={projects.length}
                     curIndex={currentProjectPointer}
                 />
-                <div className="flex flex-row justify-center items-center max-w-15/100">
-                    <LargeButton className="" onClick={() => toggleProject(true)}>
-                        <ChevronRight className="size-26" data-icon="inline-start" aria-hidden={false} />
-                    </LargeButton>
-                </div>
+                <LargeButton onClick={() => toggleProject(true)}>
+                    <ChevronRight className="size-26" data-icon="inline-start" aria-hidden={false} />
+                </LargeButton>
             </div>
             
 
