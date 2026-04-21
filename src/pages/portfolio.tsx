@@ -157,7 +157,7 @@ export default function PortfolioPage() {
 
             <div className="animate-fadeInUp flex flex-col items-center gap-2 max-w-2xl text-center">
                 <H1>Portfolio</H1>
-                <P>"Code is the closest thing to magic that actually works."</P>
+                <P>"An investment in knowledge always pays the best interest."</P>
             </div>
 
             <Separator className="animate-fadeInUp w-full max-w-5xl" />
