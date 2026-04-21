@@ -1,97 +1,148 @@
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator } from "../components/ui/breadcrumb";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "../components/ui/carousel";
+import { Separator } from "../components/ui/separator";
+import { Button } from "../components/ui/button";
+import { CodeIcon } from "lucide-react";
+import H1 from "../components/ui/typographyh1";
+import H2 from "../components/ui/typographyh2";
+import P from "../components/ui/typographyp";
 
-import xdumpImage from ".././assets/projects/xdump.png"
-import conwayImage from ".././assets/projects/c-conway-game-of-life.gif"
-import kindleImage from ".././assets/projects/kindle-extractor.png"
-import cbImage from ".././assets/projects/cb.png"
+import xdumpImage from ".././assets/projects/xdump.png";
+import conwayImage from ".././assets/projects/c-conway-game-of-life.gif";
+import kindleImage from ".././assets/projects/kindle-extractor.png";
+import cbImage from ".././assets/projects/cb.png";
+import ugImage from ".././assets/projects/ug.png"
+import wjbImage from ".././assets/projects/wjb.png"
+import pandasImage from ".././assets/projects/pandas.png"
+import autokeyImage from ".././assets/projects/autokey.png"
 
-import LargeButton from "../components/ui/large-button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
-import { ProjectCard } from "../components/ui/project-card";
+interface Project {
+    title: string;
+    description: string;
+    image: string;
+    link: string;
+}
+
+function ProjectCard({ title, description, image, link }: Project) {
+    const handleExternalLink = (url: string) => window.open(url, "_blank");
+    return (
+        <div className="bg-slate-700 rounded-lg p-4 flex flex-col gap-3 h-80">
+            <div className="h-40 w-full overflow-hidden rounded-lg shrink-0">
+                <img src={image} alt={title} className="h-full w-full object-cover" />
+            </div>
+            <p className="text-white font-bold line-clamp-1">{title}</p>
+            <p className="text-gray-300 text-sm line-clamp-2 flex-1">{description}</p>
+            <Button
+                size="sm"
+                className="bg-slate-600 hover:bg-slate-500 transition-transform duration-200 hover:scale-105 hover:cursor-pointer w-full"
+                onClick={() => handleExternalLink(link)}
+            >
+                <CodeIcon data-icon="inline-start" aria-hidden={false} />
+                See it yourself
+            </Button>
+        </div>
+    );
+}
+
+function ProjectCarousel({ projects }: { projects: Project[] }) {
+    return (
+        <Carousel className="w-full px-12" opts={{ align: "start" }}>
+            <CarouselContent>
+                {projects.map((project, index) => (
+                    <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                        <ProjectCard {...project} />
+                    </CarouselItem>
+                ))}
+            </CarouselContent>
+            <CarouselPrevious className="bg-slate-700 border-none text-white hover:bg-slate-600 hover:text-white" />
+            <CarouselNext className="bg-slate-700 border-none text-white hover:bg-slate-600 hover:text-white" />
+        </Carousel>
+    );
+}
 
 export default function PortfolioPage() {
-    
-    const [currentProjectPointer, setCurrentProjectPointer] = useState(0);
-    
-    //TODO Images
-    const projects = [
+
+    const work_projects: Project[] = [
         {
-            title: "Unify Giving VisuAIse AI image generation.",
-            description:
-                "Engineered full-stack AI-Driven software for 'Unify Giving' to help people in need access housing resources.",
+            title: "Database & IT Engineering Contractor",
+            description: "Engineered Change Birmingham's database for storing and retrieving client data.",
             image: cbImage,
-            link: "https://unifygiving.com/",
+            link: "https://changebrieftherapy.org",
         },
         {
-            title: "Change Birmingham Page + Database Backend",
-            description:
-                "Engineered full-stack website & database for the charity 'Change Birmingham' aiding staff with data storage & analytics.",
-            image: cbImage,
-            link: "https://changebrieftherapy.org/"
+            title: "1st Line IT Support",
+            description: "IT Support at We Job Box with Microsoft Azure and Entra.",
+            image: wjbImage,
+            link: "https://www.wejobbox.com",
+        },
+    ];
+
+    const foss_projects: Project[] = [
+        {
+            title: "Pandas Contribution",
+            description: "Triage'd and fixed bug reports in the pandas data analysis tool.",
+            image: pandasImage,
+            link: "https://pandas.pydata.org/",
+        },
+        {
+            title: "AutoKey Contribution",
+            description: "Fixed bug reports in the autokey automation tool.",
+            image: autokeyImage,
+            link: "https://autokey.github.io/",
         },
         {
             title: "Kindle Quote Extractor",
-            description:
-                "Engineered a Python tool for automating quote extraction. Allows for output to JSON and Markdown.",
+            description: "Engineered a Python tool for automating quote extraction. Allows for output to JSON and Markdown.",
             image: kindleImage,
-            link: "https://github.com/K0Stek122/kindle-extractor"
+            link: "https://github.com/K0Stek122/kindle-extractor",
         },
         {
             title: "xdump: Hexdump utility tool",
-            description:
-                "Engineered a Pure-C tool for analysing raw binary data of any file.",
-            image: cbImage,
-            link: "https://github.com/K0Stek122/xdump"
+            description: "Engineered a Pure-C tool for analysing raw binary data of any file.",
+            image: xdumpImage,
+            link: "https://github.com/K0Stek122/xdump",
         },
         {
             title: "Conway's Game of Life",
-            description:
-                "Designed Conway's game of life in Pure-C. Utilises mathematics and computation theory to implement a Pushdown Automaton.",
+            description: "Designed Conway's game of life in Pure-C. Utilises mathematics and computation theory to implement a Pushdown Automaton.",
             image: conwayImage,
-            link: "https://github.com/K0Stek122/c-conway-game-of-life"
+            link: "https://github.com/K0Stek122/c-conway-game-of-life",
         },
         {
             title: "CastHud: C++ GUI overlay tool",
-            description:
-                "Designed a GUI overlay tool letting users design any user interface on top of another application.",
+            description: "Designed a GUI overlay tool letting users design any user interface on top of another application.",
             image: cbImage,
-            link: "https://github.com/K0Stek122/CastHud"
+            link: "https://github.com/K0Stek122/CastHud",
         },
         {
             title: "Library injection utility in Rust",
-            description:
-                "Devised a cutting-edge tool for library injection into other applications.",
+            description: "Devised a cutting-edge tool for library injection into other applications.",
             image: cbImage,
-            link: "https://github.com/K0Stek122/Rust-DLL-Injector" // TODO: ADD README TO THAT PROJECT
+            link: "https://github.com/K0Stek122/Rust-DLL-Injector",
         },
         {
-            title: "File Splitter and Unsplitter.",
-            description:
-                "Engineered in pure C. Intuitive software that allows the user to split files for sharing or easier transfer.",
+            title: "File Splitter and Unsplitter",
+            description: "Engineered in pure C. Intuitive software that allows the user to split files for sharing or easier transfer.",
             image: cbImage,
-            link: "https://github.com/K0Stek122/c-file-splitter"
+            link: "https://github.com/K0Stek122/c-file-splitter",
         },
     ];
-    
-    const toggleProject = (increment: boolean) => {
-        if (!increment) {
-            if (currentProjectPointer === 0) return;
-            setCurrentProjectPointer(currentProjectPointer - 1);
-        } else {
-            if (currentProjectPointer === projects.length - 1) return;
-            setCurrentProjectPointer(currentProjectPointer + 1);
-        }
-    };
-    
-    const project = projects[currentProjectPointer];
+
+    const volunteering_projects: Project[] = [
+        {
+            title: "Unify Giving VisuAIse AI image generation",
+            description: "Engineered full-stack AI-Driven software for 'Unify Giving' to help people access housing resources.",
+            image: ugImage,
+            link: "https://unifygiving.com/",
+        },
+    ];
 
     return (
-        <div className="flex flex-col items-center h-screen p-2">
-            <Breadcrumb className="animate-fadeInUp hover:text-white pb-4">
-                <BreadcrumbList> 
+        <div className="flex flex-col overflow-x-hidden overflow-y-auto items-center h-screen w-full bg-slate-800 gap-6 py-8 px-4">
+            <Breadcrumb className="animate-fadeInUp hover:text-white">
+                <BreadcrumbList>
                     <BreadcrumbItem>
-                        <BreadcrumbLink className="hover:text-white" href="/">Home</BreadcrumbLink>     
+                        <BreadcrumbLink className="hover:text-white" href="/">Home</BreadcrumbLink>
                     </BreadcrumbItem>
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>
@@ -103,26 +154,32 @@ export default function PortfolioPage() {
                     </BreadcrumbItem>
                 </BreadcrumbList>
             </Breadcrumb>
-            
-            <div className="flex flex-row items-center gap-4 w-full flex-1 min-h-0">
-                <LargeButton onClick={() => toggleProject(false)}>
-                    <ChevronLeft className="size-26" data-icon="inline-start" aria-hidden={false} />
-                </LargeButton>
-                <ProjectCard
-                    key={currentProjectPointer}
-                    projectTitle={project.title}
-                    projectDescription={project.description}
-                    image={project.image}
-                    link={project.link}
-                    totalIndex={projects.length}
-                    curIndex={currentProjectPointer}
-                />
-                <LargeButton onClick={() => toggleProject(true)}>
-                    <ChevronRight className="size-26" data-icon="inline-start" aria-hidden={false} />
-                </LargeButton>
-            </div>
-            
 
+            <div className="animate-fadeInUp flex flex-col items-center gap-2 max-w-2xl text-center">
+                <H1>Portfolio</H1>
+                <P>"Code is the closest thing to magic that actually works."</P>
+            </div>
+
+            <Separator className="animate-fadeInUp w-full max-w-5xl" />
+
+            <div className="animate-fadeInUp flex flex-col gap-4 w-full max-w-5xl">
+                <H2>Work Experience</H2>
+                <ProjectCarousel projects={work_projects} />
+            </div>
+
+            <Separator className="animate-fadeInUp w-full max-w-5xl" />
+
+            <div className="animate-fadeInUp flex flex-col gap-4 w-full max-w-5xl">
+                <H2>Open Source</H2>
+                <ProjectCarousel projects={foss_projects} />
+            </div>
+
+            <Separator className="animate-fadeInUp w-full max-w-5xl" />
+
+            <div className="animate-fadeInUp flex flex-col gap-4 w-full max-w-5xl pb-8">
+                <H2>Volunteering</H2>
+                <ProjectCarousel projects={volunteering_projects} />
+            </div>
         </div>
     );
 }

@@ -29,7 +29,7 @@ const EmployersPage: React.FC<EmployersPageProps> = () => {
     };
 
     return (
-        <div className="flex flex-col overflow-x-hidden items-center min-h-screen w-full bg-slate-800 gap-6 justify-center m-2 px-4">
+        <div className="flex flex-col overflow-x-hidden overflow-y-auto items-center h-screen w-full bg-slate-800 gap-6 py-8 px-4">
             <Breadcrumb className="animate-fadeInUp hover:text-white">
                 <BreadcrumbList> 
                     <BreadcrumbItem>
