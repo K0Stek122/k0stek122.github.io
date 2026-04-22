@@ -15,6 +15,13 @@ import ugImage from ".././assets/projects/ug.png"
 import wjbImage from ".././assets/projects/wjb.png"
 import pandasImage from ".././assets/projects/pandas.png"
 import autokeyImage from ".././assets/projects/autokey.png"
+import casthudImage from ".././assets/projects/casthud.gif"
+import filesplitterImage from ".././assets/projects/filesplitter.jpg"
+import wordlistImage from ".././assets/projects/wordlist.png"
+import overlayImage from ".././assets/projects/pygameoverlay.png"
+import rpiImage from ".././assets/projects/rpi.png"
+import whahImage from ".././assets/projects/whah.png"
+import oxfamImage from ".././assets/projects/oxfam.png"
 
 interface Project {
     title: string;
@@ -34,7 +41,7 @@ function ProjectCard({ title, description, image, link }: Project) {
             <p className="text-gray-300 text-sm line-clamp-2 flex-1">{description}</p>
             <Button
                 size="sm"
-                className="bg-slate-600 hover:bg-slate-500 transition-transform duration-200 hover:scale-105 hover:cursor-pointer w-full"
+                className="bg-slate-600 hover:bg-slate-800 transition-transform duration-200 hover:scale-105 hover:cursor-pointer w-full"
                 onClick={() => handleExternalLink(link)}
             >
                 <CodeIcon data-icon="inline-start" aria-hidden={false} />
@@ -64,7 +71,7 @@ export default function PortfolioPage() {
 
     const work_projects: Project[] = [
         {
-            title: "Database & IT Engineering Contractor",
+            title: "Database Engineer",
             description: "Engineered Change Birmingham's database for storing and retrieving client data.",
             image: cbImage,
             link: "https://changebrieftherapy.org",
@@ -91,6 +98,12 @@ export default function PortfolioPage() {
             link: "https://autokey.github.io/",
         },
         {
+            title: "Raspberry PI Self-Hosting",
+            description: "Server hosting with RPI using only FOSS and self-made software.",
+            image: rpiImage,
+            link: "https://www.kostek.uk",
+        },
+        {
             title: "Kindle Quote Extractor",
             description: "Engineered a Python tool for automating quote extraction. Allows for output to JSON and Markdown.",
             image: kindleImage,
@@ -111,30 +124,48 @@ export default function PortfolioPage() {
         {
             title: "CastHud: C++ GUI overlay tool",
             description: "Designed a GUI overlay tool letting users design any user interface on top of another application.",
-            image: cbImage,
+            image: casthudImage,
             link: "https://github.com/K0Stek122/CastHud",
         },
         {
-            title: "Library injection utility in Rust",
-            description: "Devised a cutting-edge tool for library injection into other applications.",
-            image: cbImage,
-            link: "https://github.com/K0Stek122/Rust-DLL-Injector",
-        },
-        {
             title: "File Splitter and Unsplitter",
-            description: "Engineered in pure C. Intuitive software that allows the user to split files for sharing or easier transfer.",
-            image: cbImage,
+            description: "Engineered in pure C.",
+            image: filesplitterImage,
             link: "https://github.com/K0Stek122/c-file-splitter",
         },
+        {
+            title: "Hatch",
+            description: "Wordlist generation for Cyber Security.",
+            image: wordlistImage,
+            link: "https://github.com/K0Stek122/hatch"
+        },
+        {
+            title: "PyOverlay",
+            description: "Tool for modifying any app's UI.",
+            image: overlayImage,
+            link: "https://github.com/K0Stek122/Python-pygame-overlay"
+        }
     ];
 
     const volunteering_projects: Project[] = [
         {
-            title: "Unify Giving VisuAIse AI image generation",
-            description: "Engineered full-stack AI-Driven software for 'Unify Giving' to help people access housing resources.",
+            title: "Software Engineer",
+            description: "Engineered full-stack AI-Driven software for 'Unify Giving'.",
             image: ugImage,
             link: "https://unifygiving.com/",
         },
+        {
+            title: "IT Team Lead",
+            description: "IT Team Lead at We Hold A Hand. Handling IT Support and Web Dev.",
+            image: whahImage,
+            link: "https://weholdahand.org/",
+        },
+        {
+            title: "Book Shop Technician",
+            description: "Technician at Oxfam Rugby's Local bookshop.",
+            image: oxfamImage,
+            link: "https://www.oxfam.org.uk/",
+        }
     ];
 
     return (
@@ -180,6 +211,20 @@ export default function PortfolioPage() {
                 <H2>Volunteering</H2>
                 <ProjectCarousel projects={volunteering_projects} />
             </div>
+
+            <Separator className="animate-fadeInUp w-full max-w-5xl" />
+
+            <div className="animate-fadeInUp flex flex-col items-center gap-2 pb-8">
+                <P>For a full range of my projects, have a look at my GitHub:</P>
+                <Button
+                    className="bg-slate-600 hover:bg-slate-900 transition-transform duration-200 hover:scale-105 hover:cursor-pointer"
+                    onClick={() => window.open("https://github.com/K0Stek122", "_blank")}
+                >
+                    <CodeIcon data-icon="inline-start" aria-hidden={false} />
+                    GitHub
+                </Button>
+            </div>
+
         </div>
     );
 }
