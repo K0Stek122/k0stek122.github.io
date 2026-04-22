@@ -59,7 +59,7 @@ const IndexPage: React.FC<IndexPageProps> = () => {
                     </AlertDialogContent>
                 </AlertDialog>
 
-                <LargeButton onClick={() => handleExternalLink("https://themindpalace.bearblog.dev/")}>
+                <LargeButton onClick={() => navigate('/blog')}>
                     <BookOpenText className="size-14" data-icon="inline-start" aria-hidden="true" />
                     Blog
                 </LargeButton>
