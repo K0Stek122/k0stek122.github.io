@@ -22,6 +22,7 @@ import overlayImage from ".././assets/projects/pygameoverlay.png"
 import rpiImage from ".././assets/projects/rpi.png"
 import whahImage from ".././assets/projects/whah.png"
 import oxfamImage from ".././assets/projects/oxfam.png"
+import bachelorImage from ".././assets/projects/bachelor.png"
 
 interface Project {
     title: string;
@@ -168,6 +169,15 @@ export default function PortfolioPage() {
         }
     ];
 
+    const academic_projects: Project[] = [
+        {
+            title: "Bachelor's Dissertation",
+            description: "Network Intrusion Detection System for Microservices with Novel Hybrid Finite Automata.",
+            image: bachelorImage,
+            link: "https://drive.google.com/file/d/1GJdZROu50YdA5ovra1xmV2IrxlsvvMfP/view",
+        }
+    ]
+
     return (
         <div className="flex flex-col overflow-x-hidden overflow-y-auto items-center h-screen w-full bg-slate-800 gap-6 py-8 px-4">
             <Breadcrumb className="animate-fadeInUp hover:text-white">
@@ -210,6 +220,13 @@ export default function PortfolioPage() {
             <div className="animate-fadeInUp flex flex-col gap-4 w-full max-w-5xl pb-8">
                 <H2>Volunteering</H2>
                 <ProjectCarousel projects={volunteering_projects} />
+            </div>
+
+            <Separator className="animate-fadeInUp w-full max-w-5xl" />
+
+            <div className="animate-fadeInUp flex flex-col gap-4 w-full max-w-5xl pb-8">
+                <H2>Academic Papers</H2>
+                <ProjectCarousel projects={academic_projects} />
             </div>
 
             <Separator className="animate-fadeInUp w-full max-w-5xl" />
